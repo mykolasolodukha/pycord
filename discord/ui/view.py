@@ -183,7 +183,7 @@ class View:
         for item in items:
             self.add_item(item)
 
-        loop = asyncio.get_running_loop()
+        loop = asyncio.get_event_loop()
         self.id: str = os.urandom(16).hex()
         self.__cancel_callback: Callable[[View], None] | None = None
         self.__timeout_expiry: float | None = None
