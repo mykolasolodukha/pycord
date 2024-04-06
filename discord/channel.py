@@ -3188,7 +3188,7 @@ class PartialMessageable(discord.abc.Messageable, Hashable):
         self, state: ConnectionState, id: int, type: ChannelType | None = None
     ):
         self._state: ConnectionState = state
-        self._channel: Object = Object(id=id)
+        self._channel: Object = Object(id=id, _state=state)
         self.id: int = id
         self.type: ChannelType | None = type
 

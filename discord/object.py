@@ -72,7 +72,7 @@ class Object(Hashable):
         The ID of the object.
     """
 
-    def __init__(self, id: SupportsIntCast):
+    def __init__(self, id: SupportsIntCast, _state=None):
         try:
             id = int(id)
         except ValueError:
@@ -81,6 +81,8 @@ class Object(Hashable):
             ) from None
         else:
             self.id = id
+
+        self._state = _state
 
     def __repr__(self) -> str:
         return f"<Object id={self.id!r}>"
